@@ -1,0 +1,2275 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Bootstrap 4 Class Name Reference - ตัวอย่างการใช้งาน class ทุกหมวดของ Bootstrap 4">
+  <title>Bootstrap 4 - รวมทุก Class Name</title>
+  <link rel="icon" href="https://getbootstrap.com/docs/4.6/assets/brand/bootstrap-solid.svg" type="image/svg+xml">
+
+  <!-- Bootstrap 4 CSS (Official CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+        crossorigin="anonymous">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+      color: #e0e0e0;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Custom section styling */
+    .demo-section {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow-x: auto;
+      word-wrap: break-word;
+    }
+
+    .demo-section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15);
+    }
+
+    .section-title {
+      color: #a78bfa;
+      border-bottom: 2px solid rgba(167, 139, 250, 0.3);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .code-label {
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      color: #c084fc;
+      background: rgba(192, 132, 252, 0.1);
+      border: 1px solid rgba(192, 132, 252, 0.2);
+      border-radius: 4px;
+      padding: 2px 6px;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      word-break: break-all;
+    }
+
+    /* Navbar custom */
+    .navbar-custom {
+      background: rgba(15, 12, 41, 0.95) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(167, 139, 250, 0.2);
+    }
+
+    /* Active nav link highlight */
+    .navbar-nav .nav-link.active {
+      color: #a78bfa !important;
+      font-weight: 600;
+      position: relative;
+    }
+    .navbar-nav .nav-item.active > .nav-link,
+    .navbar-nav .nav-item.active > .nav-link.dropdown-toggle {
+      color: #a78bfa !important;
+    }
+    .navbar-nav .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 2px;
+      background: #a78bfa;
+      border-radius: 2px;
+    }
+    .dropdown-item.active,
+    .dropdown-item:active {
+      background-color: rgba(167, 139, 250, 0.2) !important;
+      color: #a78bfa !important;
+    }
+
+    /* Search highlight */
+    .search-highlight {
+      border-color: rgba(167, 139, 250, 0.5) !important;
+      box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.25);
+    }
+
+    /* Hero */
+    .hero-section {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));
+      border-radius: 20px;
+      padding: 4rem 2rem;
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(167, 139, 250, 0.2);
+    }
+
+    .hero-section h1 {
+      background: linear-gradient(135deg, #a78bfa, #6366f1, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      word-wrap: break-word;
+    }
+
+    /* Card glassmorphism */
+    .card {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      backdrop-filter: blur(10px);
+      color: #e0e0e0;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card-header {
+      background: rgba(99, 102, 241, 0.15) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* Table */
+    .table-dark {
+      background-color: rgba(30, 27, 75, 0.8) !important;
+    }
+
+    .table-dark th, .table-dark td {
+      border-color: rgba(167, 139, 250, 0.2) !important;
+    }
+
+    /* Form controls */
+    .form-control, .custom-select {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      color: #e0e0e0 !important;
+    }
+
+    .form-control:focus, .custom-select:focus {
+      border-color: #a78bfa !important;
+      box-shadow: 0 0 0 0.2rem rgba(167, 139, 250, 0.25) !important;
+    }
+
+    /* List group */
+    .list-group-item {
+      background: rgba(255, 255, 255, 0.06) !important;
+      border-color: rgba(255, 255, 255, 0.1) !important;
+      color: #e0e0e0 !important;
+    }
+
+    /* Modal & dropdown */
+    .modal-content {
+      background: rgba(30, 27, 75, 0.98) !important;
+      border: 1px solid rgba(167, 139, 250, 0.3) !important;
+      color: #e0e0e0;
+    }
+
+    .dropdown-menu {
+      background: rgba(30, 27, 75, 0.98) !important;
+      border: 1px solid rgba(167, 139, 250, 0.2) !important;
+    }
+
+    .dropdown-item {
+      color: #e0e0e0 !important;
+    }
+
+    .dropdown-item:hover {
+      background: rgba(99, 102, 241, 0.2) !important;
+    }
+
+    /* Accordion */
+    .accordion .card-header {
+      cursor: pointer;
+    }
+
+    /* Progress bar animation */
+    .progress {
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(15, 12, 41, 0.95);
+      border-top: 1px solid rgba(167, 139, 250, 0.15);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #1e1b4b; }
+    ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #a78bfa; }
+
+    /* Custom Badge Glow */
+    .badge-primary { background-color: #6366f1 !important; }
+    .badge-success { background-color: #10b981 !important; }
+    .badge-warning { background-color: #f59e0b !important; color: #000 !important; }
+    .badge-danger { background-color: #ef4444 !important; }
+    .badge-info { background-color: #06b6d4 !important; }
+
+    /* Custom button glow */
+    .btn-primary { background: linear-gradient(135deg, #6366f1, #8b5cf6) !important; border: none !important; }
+    .btn-primary:hover { background: linear-gradient(135deg, #4f46e5, #7c3aed) !important; box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4) !important; }
+    .btn-success { background: linear-gradient(135deg, #10b981, #059669) !important; border: none !important; }
+    .btn-danger { background: linear-gradient(135deg, #ef4444, #dc2626) !important; border: none !important; }
+    .btn-warning { background: linear-gradient(135deg, #f59e0b, #d97706) !important; border: none !important; }
+    .btn-info { background: linear-gradient(135deg, #06b6d4, #0891b2) !important; border: none !important; }
+    .btn-outline-light:hover { background: rgba(255,255,255,0.1) !important; }
+
+    /* Jumbotron */
+    .jumbotron {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(168, 85, 247, 0.1)) !important;
+      border: 1px solid rgba(167, 139, 250, 0.15);
+      color: #e0e0e0;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      background: rgba(255, 255, 255, 0.05) !important;
+    }
+    .breadcrumb-item a { color: #a78bfa !important; }
+    .breadcrumb-item.active { color: #9ca3af !important; }
+
+    /* Pagination */
+    .page-link {
+      background: rgba(255,255,255,0.05) !important;
+      border-color: rgba(255,255,255,0.1) !important;
+      color: #a78bfa !important;
+    }
+    .page-item.active .page-link {
+      background: #6366f1 !important;
+      border-color: #6366f1 !important;
+    }
+
+    /* Tooltip & Popover */
+    .tooltip-inner { background: #6366f1 !important; }
+    .bs-tooltip-top .arrow::before { border-top-color: #6366f1 !important; }
+
+    /* Nav tabs/pills */
+    .nav-tabs .nav-link { color: #9ca3af !important; border-color: transparent !important; }
+    .nav-tabs .nav-link.active { color: #a78bfa !important; background: rgba(99,102,241,0.15) !important; border-color: rgba(167,139,250,0.3) rgba(167,139,250,0.3) transparent !important; }
+    .nav-pills .nav-link { color: #9ca3af !important; }
+    .nav-pills .nav-link.active { background: #6366f1 !important; }
+    .tab-content { color: #e0e0e0; }
+
+    /* Alert custom */
+    .alert { border: none !important; }
+
+    /* Carousel */
+    .carousel-item img { border-radius: 12px; }
+
+    /* Toast */
+    .toast { background: rgba(30, 27, 75, 0.98) !important; color: #e0e0e0 !important; border: 1px solid rgba(167,139,250,0.2) !important; }
+    .toast-header { background: rgba(99,102,241,0.15) !important; color: #e0e0e0 !important; border-bottom: 1px solid rgba(255,255,255,0.1) !important; }
+
+    /* Spinner */
+    .spinner-border { color: #a78bfa; }
+    .spinner-grow { color: #6366f1; }
+
+    /* Custom file input */
+    .custom-file-label { background: rgba(255,255,255,0.08) !important; border-color: rgba(255,255,255,0.15) !important; color: #9ca3af !important; }
+    .custom-file-label::after { background: #6366f1 !important; color: #fff !important; border-left: 1px solid rgba(255,255,255,0.15) !important; }
+
+    /* ============================================= */
+    /* RESPONSIVE - Mobile First Adjustments         */
+    /* ============================================= */
+
+    /* Tablet and below (max-width: 768px) */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 2.5rem 1.25rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        border-radius: 14px;
+      }
+
+      .hero-section h1 {
+        font-size: 2rem !important;
+      }
+
+      .hero-section .lead {
+        font-size: 1rem;
+      }
+
+      .hero-section .btn-lg {
+        font-size: 0.95rem;
+        padding: 0.5rem 1.25rem;
+      }
+
+      .demo-section {
+        padding: 1.25rem;
+        border-radius: 12px;
+      }
+
+      .demo-section:hover {
+        transform: none;
+        box-shadow: none;
+      }
+
+      .section-title {
+        font-size: 1.3rem;
+      }
+
+      /* Cards: แปลง card-deck เป็น stack */
+      .card-deck {
+        flex-direction: column;
+      }
+
+      .card-deck .card {
+        margin-bottom: 1rem;
+      }
+
+      .card:hover {
+        transform: none;
+      }
+
+      /* Jumbotron */
+      .jumbotron .display-4 {
+        font-size: 1.75rem !important;
+      }
+
+      /* Pagination wrap */
+      .pagination {
+        flex-wrap: wrap;
+      }
+
+      /* Toast full width */
+      .toast {
+        min-width: auto !important;
+        width: 100% !important;
+      }
+
+      /* Embed responsive */
+      .embed-responsive {
+        max-width: 100% !important;
+      }
+
+      /* Position demo box height */
+      .position-relative[style*="height: 120px"] {
+        height: auto !important;
+        min-height: 100px;
+      }
+
+      /* Float demo box */
+      .clearfix .float-left,
+      .clearfix .float-right {
+        float: none !important;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      /* .mx-auto fixed width box */
+      .mx-auto[style*="width: 300px"] {
+        width: 100% !important;
+        max-width: 300px;
+      }
+
+      /* Stretched link card */
+      .card[style*="max-width: 350px"] {
+        max-width: 100% !important;
+      }
+
+      /* Back to Top button */
+      .position-fixed[style*="bottom: 30px"] {
+        bottom: 16px !important;
+        right: 16px !important;
+        width: 42px !important;
+        height: 42px !important;
+        font-size: 1rem !important;
+      }
+
+      /* Navbar search form */
+      .navbar .form-inline {
+        margin-top: 0.75rem;
+        width: 100%;
+      }
+
+      .navbar .form-inline .form-control {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+
+      .navbar .form-inline .btn {
+        width: 100%;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+      }
+
+      footer .list-unstyled li {
+        padding: 0.15rem 0;
+      }
+
+      /* Media object: stack on mobile */
+      .media {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .media img {
+        margin-right: 0 !important;
+        margin-bottom: 0.75rem;
+      }
+
+      .media .media {
+        margin-left: 0;
+      }
+
+      /* Typography display size */
+      .display-4 {
+        font-size: 2rem !important;
+      }
+
+      .display-3 {
+        font-size: 2.2rem !important;
+      }
+
+      /* Text truncate max-width */
+      .text-truncate[style*="max-width: 300px"] {
+        max-width: 100% !important;
+      }
+
+      /* Flexbox demo: always wrap */
+      .d-flex.justify-content-between {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      /* Button sizes demo */
+      .btn-lg {
+        font-size: 1rem;
+      }
+
+      /* Spacing demo: 2 columns instead of 5 */
+      .col-md-2 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+
+    /* Phone (max-width: 480px) */
+    @media (max-width: 480px) {
+      .hero-section {
+        padding: 2rem 1rem;
+      }
+
+      .hero-section h1 {
+        font-size: 1.6rem !important;
+      }
+
+      .hero-section .btn-lg {
+        display: block;
+        width: 100%;
+        margin-right: 0 !important;
+        margin-bottom: 0.75rem;
+      }
+
+      .demo-section {
+        padding: 1rem;
+        border-radius: 10px;
+      }
+
+      .section-title {
+        font-size: 1.15rem;
+      }
+
+      .code-label {
+        font-size: 0.65rem;
+        padding: 1px 4px;
+      }
+
+      /* Grid demo text smaller */
+      .row .bg-primary,
+      .row .bg-success,
+      .row .bg-warning,
+      .row .bg-danger,
+      .row .bg-info,
+      .row .bg-secondary,
+      .row .bg-dark {
+        font-size: 0.7rem;
+        padding: 0.5rem !important;
+      }
+
+      /* Table font size */
+      .table-sm th,
+      .table-sm td {
+        font-size: 0.75rem;
+        padding: 0.3rem !important;
+      }
+
+      /* Buttons font size */
+      .btn {
+        font-size: 0.82rem;
+      }
+
+      .btn-group .btn {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.5rem;
+      }
+
+      /* Nav tabs/pills smaller */
+      .nav-tabs .nav-link,
+      .nav-pills .nav-link {
+        font-size: 0.82rem;
+        padding: 0.4rem 0.6rem;
+      }
+
+      /* List group horizontal: stack */
+      .list-group-horizontal {
+        flex-direction: column !important;
+      }
+
+      /* Footer spacing */
+      footer .col-md-4 {
+        margin-bottom: 1.5rem;
+      }
+
+      /* Accordion title */
+      .accordion .card-header h5 {
+        font-size: 0.9rem;
+      }
+
+      /* Progress bar text */
+      .progress-bar {
+        font-size: 0.7rem;
+      }
+
+      /* Display helpers */
+      .display-3 {
+        font-size: 1.8rem !important;
+      }
+
+      .display-4 {
+        font-size: 1.5rem !important;
+      }
+
+      .h3 {
+        font-size: 1.25rem !important;
+      }
+
+      /* Image section */
+      .col-md-3 img {
+        max-width: 80px;
+      }
+
+      /* Spinner demo wrap */
+      .spinner-border,
+      .spinner-grow {
+        margin-bottom: 0.5rem;
+      }
+
+      /* Width demo */
+      .w-25 { font-size: 0.7rem; }
+      .w-50 { font-size: 0.7rem; }
+      .w-75 { font-size: 0.7rem; }
+      .w-100 { font-size: 0.7rem; }
+    }
+
+    /* Extra small phone (max-width: 360px) */
+    @media (max-width: 360px) {
+      .hero-section h1 {
+        font-size: 1.3rem !important;
+      }
+
+      .hero-section .lead {
+        font-size: 0.85rem;
+      }
+
+      .navbar-brand {
+        font-size: 0.9rem !important;
+      }
+
+      .badge {
+        font-size: 0.65rem;
+      }
+
+      .alert {
+        font-size: 0.82rem;
+        padding: 0.5rem 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗ -->
+  <!-- ║  1. NAVBAR - Navigation Classes                            ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════════╝ -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top shadow-lg">
+    <div class="container">
+      <a class="navbar-brand font-weight-bold d-flex align-items-center" href="#">
+        <img src="https://getbootstrap.com/docs/4.6/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top mr-2" alt="Bootstrap" style="filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));">
+        Bootstrap4 Reference
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <!-- .nav .navbar-nav .ml-auto -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#layout">Layout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#content">Content</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#components">Components</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#forms">Forms</a>
+          </li>
+          <!-- Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navDropdown" role="button"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              More
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navDropdown">
+              <a class="dropdown-item" href="#utilities">Utilities</a>
+              <a class="dropdown-item" href="#modals">Modals</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#extras">Extras</a>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Inline form in navbar -->
+        <form class="form-inline ml-lg-3" id="searchForm">
+          <input class="form-control form-control-sm mr-2" type="search" placeholder="ค้นหา class..." aria-label="Search" id="searchInput">
+          <button class="btn btn-outline-light btn-sm" type="submit">ค้นหา</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Spacer for fixed navbar -->
+  <div style="height: 80px;"></div>
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗ -->
+  <!-- ║  HERO SECTION                                              ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════════╝ -->
+  <div class="container">
+    <div class="hero-section">
+      <h1 class="display-3 mb-2 mb-md-3">Bootstrap 4 Class Reference</h1>
+      <p class="lead text-white-50 mb-3 mb-md-4 px-2 px-md-0">รวมทุก Class Name ที่ใช้บ่อยใน Bootstrap 4 พร้อมตัวอย่างจริง</p>
+
+      <!-- .btn .btn-* .btn-lg .btn-sm .mr-2 .rounded-pill -->
+      <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center">
+        <a href="#layout" class="btn btn-primary btn-lg mr-sm-2 mb-2 mb-sm-0 rounded-pill px-4 shadow">เริ่มเรียนรู้</a>
+        <a href="#components" class="btn btn-outline-light btn-lg rounded-pill px-4">ดู Components</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗ -->
+  <!-- ║  2. LAYOUT CLASSES - Grid, Container, Row, Col             ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════════╝ -->
+  <section id="layout" class="container my-5">
+    <h2 class="section-title">📐 Layout Classes</h2>
+
+    <!-- CONTAINER -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Container</h4>
+      <span class="code-label">.container</span>
+      <span class="code-label">.container-fluid</span>
+
+      <!-- GRID: .row .col-* .col-sm-* .col-md-* .col-lg-* .col-xl-* -->
+      <h5 class="text-info mt-4 mb-3">Grid System (.row .col-*)</h5>
+      <div class="row mb-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+          <div class="bg-primary text-white text-center p-2 p-md-3 rounded" style="font-size: 0.8rem;">.col-12 .col-sm-6 .col-md-4 .col-lg-3</div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+          <div class="bg-success text-white text-center p-2 p-md-3 rounded" style="font-size: 0.8rem;">.col-12 .col-sm-6 .col-md-4 .col-lg-3</div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+          <div class="bg-warning text-dark text-center p-2 p-md-3 rounded" style="font-size: 0.8rem;">.col-12 .col-sm-6 .col-md-4 .col-lg-3</div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+          <div class="bg-danger text-white text-center p-2 p-md-3 rounded" style="font-size: 0.8rem;">.col-12 .col-sm-6 .col-md-4 .col-lg-3</div>
+        </div>
+      </div>
+
+      <!-- .row .no-gutters -->
+      <h5 class="text-info mt-4 mb-3">No Gutters (.row .no-gutters)</h5>
+      <div class="row no-gutters mb-3">
+        <div class="col-4"><div class="bg-info text-white text-center p-2">.col-4</div></div>
+        <div class="col-4"><div class="bg-secondary text-white text-center p-2">.col-4</div></div>
+        <div class="col-4"><div class="bg-dark text-white text-center p-2">.col-4</div></div>
+      </div>
+
+      <!-- .offset-* -->
+      <h5 class="text-info mt-4 mb-3">Offset (.offset-md-*)</h5>
+      <div class="row mb-3">
+        <div class="col-md-4 offset-md-2 mb-2">
+          <div class="bg-info text-white text-center p-2 rounded">.col-md-4 .offset-md-2</div>
+        </div>
+        <div class="col-md-4 mb-2">
+          <div class="bg-info text-white text-center p-2 rounded">.col-md-4</div>
+        </div>
+      </div>
+
+      <!-- .order-* -->
+      <h5 class="text-info mt-4 mb-3">Order (.order-*)</h5>
+      <div class="row mb-3">
+        <div class="col order-3"><div class="bg-danger text-white text-center p-2 rounded">.order-3 (1st)</div></div>
+        <div class="col order-1"><div class="bg-success text-white text-center p-2 rounded">.order-1 (2nd)</div></div>
+        <div class="col order-2"><div class="bg-warning text-dark text-center p-2 rounded">.order-2 (3rd)</div></div>
+      </div>
+
+      <!-- Flex utilities -->
+      <h5 class="text-info mt-4 mb-3">Flexbox (.d-flex .justify-content-* .align-items-*)</h5>
+      <div class="d-flex flex-wrap justify-content-between align-items-center p-2 p-md-3 rounded" style="background: rgba(99,102,241,0.1); min-height: 60px; gap: 0.5rem;">
+        <span class="badge badge-primary p-2">.justify-content-between</span>
+        <span class="badge badge-success p-2">.align-items-center</span>
+        <span class="badge badge-warning p-2">.d-flex</span>
+      </div>
+
+      <div class="d-flex flex-column flex-md-row justify-content-around align-items-stretch mt-3">
+        <div class="bg-info text-white text-center p-2 m-1 rounded flex-fill">.flex-fill</div>
+        <div class="bg-primary text-white text-center p-2 m-1 rounded flex-grow-1">.flex-grow-1</div>
+        <div class="bg-success text-white text-center p-2 m-1 rounded flex-shrink-0">.flex-shrink-0</div>
+      </div>
+
+      <!-- .d-none .d-sm-block .d-md-inline etc -->
+      <h5 class="text-info mt-4 mb-3">Display (.d-none .d-sm-block .d-md-inline .d-lg-flex)</h5>
+      <div class="d-none d-sm-block bg-primary text-white text-center p-2 rounded mb-2">
+        ซ่อนบน XS, แสดงตั้งแต่ SM (.d-none .d-sm-block)
+      </div>
+      <div class="d-block d-md-none bg-warning text-dark text-center p-2 rounded mb-2">
+        แสดงบน XS-SM, ซ่อนตั้งแต่ MD (.d-block .d-md-none)
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗ -->
+  <!-- ║  3. CONTENT CLASSES - Typography, Images, Tables           ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════════╝ -->
+  <section id="content" class="container my-5">
+    <h2 class="section-title">📝 Content Classes</h2>
+
+    <div class="demo-section">
+      <!-- Typography -->
+      <h4 class="text-light mb-3">Typography</h4>
+      <span class="code-label">.display-1 ~ .display-4</span>
+      <span class="code-label">.h1 ~ .h6</span>
+      <span class="code-label">.lead</span>
+      <span class="code-label">.small</span>
+      <span class="code-label">.font-weight-*</span>
+      <span class="code-label">.text-*</span>
+
+      <h1 class="display-4 text-white">.display-4</h1>
+      <p class="lead text-white-50">.lead - ข้อความเน้น ตัวใหญ่กว่าปกติ</p>
+      <p class="h3 text-info">.h3 class (ไม่ใช่ tag)</p>
+      <p class="font-weight-bold text-light">.font-weight-bold</p>
+      <p class="font-weight-light text-muted">.font-weight-light .text-muted</p>
+      <p class="font-italic text-white-50">.font-italic</p>
+      <p class="text-uppercase text-info">.text-uppercase</p>
+      <p class="text-lowercase text-warning">.text-lowercase → "THIS IS LOWERCASE"</p>
+      <p class="text-capitalize text-success">.text-capitalize → "hello world"</p>
+      <p class="text-monospace text-danger">.text-monospace</p>
+
+      <!-- Text alignment -->
+      <p class="text-left text-md-center text-lg-right text-light bg-dark p-2 rounded">
+        .text-left .text-md-center .text-lg-right
+      </p>
+
+      <!-- Text truncate -->
+      <p class="text-truncate text-white" style="max-width: 100%;">
+        .text-truncate - ข้อความยาวๆ จะถูกตัดด้วย ... เมื่อเกินความกว้าง
+      </p>
+
+      <!-- Blockquote -->
+      <blockquote class="blockquote text-center mt-4">
+        <p class="mb-0 text-white">"Bootstrap ทำให้การสร้างเว็บง่ายขึ้น"</p>
+        <footer class="blockquote-footer text-white-50">จาก <cite title="Source">นักพัฒนา</cite></footer>
+      </blockquote>
+
+      <!-- Lists -->
+      <h5 class="text-info mt-4 mb-3">Lists</h5>
+      <ul class="list-unstyled text-light">
+        <li>.list-unstyled - รายการที่ 1</li>
+        <li>.list-unstyled - รายการที่ 2</li>
+      </ul>
+      <ul class="list-inline text-light">
+        <li class="list-inline-item">.list-inline-item 1</li>
+        <li class="list-inline-item">.list-inline-item 2</li>
+        <li class="list-inline-item">.list-inline-item 3</li>
+      </ul>
+    </div>
+
+    <!-- Images -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Images</h4>
+      <span class="code-label">.img-fluid</span>
+      <span class="code-label">.img-thumbnail</span>
+      <span class="code-label">.rounded</span>
+      <span class="code-label">.rounded-circle</span>
+
+      <div class="row mt-3 text-center">
+        <div class="col-6 col-md-3 mb-3">
+          <img src="https://picsum.photos/seed/rounded/150/150" class="rounded mb-2 img-fluid" alt="rounded" style="max-width: 120px;">
+          <p class="small text-muted">.rounded</p>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <img src="https://picsum.photos/seed/circle/150/150" class="rounded-circle mb-2 img-fluid" alt="circle" style="max-width: 120px;">
+          <p class="small text-muted">.rounded-circle</p>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <img src="https://picsum.photos/seed/thumbnail/150/150" class="img-thumbnail mb-2 img-fluid" alt="thumbnail" style="max-width: 120px; background:transparent;">
+          <p class="small text-muted">.img-thumbnail</p>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <img src="https://picsum.photos/seed/fluid/300/100" class="img-fluid rounded mb-2" alt="fluid">
+          <p class="small text-muted">.img-fluid</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tables -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Tables</h4>
+      <span class="code-label">.table</span>
+      <span class="code-label">.table-dark</span>
+      <span class="code-label">.table-striped</span>
+      <span class="code-label">.table-bordered</span>
+      <span class="code-label">.table-hover</span>
+      <span class="code-label">.table-sm</span>
+      <span class="code-label">.table-responsive</span>
+      <span class="code-label">.thead-dark</span>
+
+      <div class="table-responsive mt-3">
+        <table class="table table-dark table-striped table-bordered table-hover table-sm">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Class</th>
+              <th scope="col">คำอธิบาย</th>
+              <th scope="col">ตัวอย่าง</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>.table</td>
+              <td>ตารางพื้นฐาน</td>
+              <td><span class="badge badge-primary">Basic</span></td>
+            </tr>
+            <tr class="table-active">
+              <th scope="row">2</th>
+              <td>.table-active</td>
+              <td>ไฮไลท์แถว</td>
+              <td><span class="badge badge-info">Active</span></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>.table-striped</td>
+              <td>ลายทางสลับสี</td>
+              <td><span class="badge badge-success">Striped</span></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>.table-hover</td>
+              <td>เปลี่ยนสีเมื่อ hover</td>
+              <td><span class="badge badge-warning">Hover</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗ -->
+  <!-- ║  4. COMPONENTS                                             ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════════╝ -->
+  <section id="components" class="container my-5">
+    <h2 class="section-title">🧩 Components</h2>
+
+    <!-- BUTTONS -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Buttons</h4>
+      <span class="code-label">.btn</span>
+      <span class="code-label">.btn-primary</span>
+      <span class="code-label">.btn-outline-*</span>
+      <span class="code-label">.btn-lg</span>
+      <span class="code-label">.btn-sm</span>
+      <span class="code-label">.btn-block</span>
+      <span class="code-label">.btn-group</span>
+
+      <div class="mb-3">
+        <button class="btn btn-primary mr-1 mb-1">.btn-primary</button>
+        <button class="btn btn-secondary mr-1 mb-1">.btn-secondary</button>
+        <button class="btn btn-success mr-1 mb-1">.btn-success</button>
+        <button class="btn btn-danger mr-1 mb-1">.btn-danger</button>
+        <button class="btn btn-warning mr-1 mb-1">.btn-warning</button>
+        <button class="btn btn-info mr-1 mb-1">.btn-info</button>
+        <button class="btn btn-light mr-1 mb-1">.btn-light</button>
+        <button class="btn btn-dark mr-1 mb-1">.btn-dark</button>
+        <button class="btn btn-link mr-1 mb-1">.btn-link</button>
+      </div>
+
+      <!-- Outline buttons -->
+      <div class="mb-3">
+        <button class="btn btn-outline-primary mr-1 mb-1">.btn-outline-primary</button>
+        <button class="btn btn-outline-secondary mr-1 mb-1">.btn-outline-secondary</button>
+        <button class="btn btn-outline-success mr-1 mb-1">.btn-outline-success</button>
+        <button class="btn btn-outline-danger mr-1 mb-1">.btn-outline-danger</button>
+        <button class="btn btn-outline-warning mr-1 mb-1">.btn-outline-warning</button>
+        <button class="btn btn-outline-info mr-1 mb-1">.btn-outline-info</button>
+      </div>
+
+      <!-- Sizes -->
+      <div class="mb-3 d-flex flex-wrap align-items-center">
+        <button class="btn btn-primary btn-lg mr-2 mb-1">.btn-lg</button>
+        <button class="btn btn-primary mr-2 mb-1">ปกติ</button>
+        <button class="btn btn-primary btn-sm mb-1">.btn-sm</button>
+      </div>
+
+      <!-- Block -->
+      <button class="btn btn-info btn-block mb-3">.btn-block (เต็มความกว้าง)</button>
+
+      <!-- Button Group -->
+      <div class="btn-group mb-3" role="group" aria-label="Button group">
+        <button class="btn btn-primary">ซ้าย</button>
+        <button class="btn btn-primary">กลาง</button>
+        <button class="btn btn-primary">ขวา</button>
+      </div>
+      <span class="code-label ml-2">.btn-group</span>
+
+      <!-- Button Toolbar -->
+      <div class="btn-toolbar mt-2" role="toolbar" aria-label="Toolbar">
+        <div class="btn-group mr-2" role="group">
+          <button class="btn btn-success btn-sm">1</button>
+          <button class="btn btn-success btn-sm">2</button>
+          <button class="btn btn-success btn-sm">3</button>
+        </div>
+        <div class="btn-group mr-2" role="group">
+          <button class="btn btn-danger btn-sm">4</button>
+          <button class="btn btn-danger btn-sm">5</button>
+        </div>
+      </div>
+      <span class="code-label mt-2">.btn-toolbar</span>
+
+      <!-- Active / Disabled -->
+      <div class="mt-3">
+        <button class="btn btn-primary active mr-2">.active</button>
+        <button class="btn btn-primary disabled" disabled>.disabled</button>
+      </div>
+    </div>
+
+    <!-- ALERTS -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Alerts</h4>
+      <span class="code-label">.alert</span>
+      <span class="code-label">.alert-primary</span>
+      <span class="code-label">.alert-dismissible</span>
+      <span class="code-label">.fade .show</span>
+
+      <div class="alert alert-primary" role="alert">
+        <strong>.alert-primary</strong> — ข้อความแจ้งเตือนประเภท Primary
+      </div>
+      <div class="alert alert-success" role="alert">
+        <strong>.alert-success</strong> — สำเร็จ!
+      </div>
+      <div class="alert alert-danger" role="alert">
+        <strong>.alert-danger</strong> — เกิดข้อผิดพลาด!
+      </div>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>.alert-warning .alert-dismissible</strong> — กดปิดได้!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="alert alert-info" role="alert">
+        ข้อความพร้อม <a href="#" class="alert-link">.alert-link</a>
+      </div>
+    </div>
+
+    <!-- BADGES -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Badges</h4>
+      <span class="code-label">.badge</span>
+      <span class="code-label">.badge-*</span>
+      <span class="code-label">.badge-pill</span>
+
+      <div class="mb-3">
+        <span class="badge badge-primary mr-1">.badge-primary</span>
+        <span class="badge badge-secondary mr-1">.badge-secondary</span>
+        <span class="badge badge-success mr-1">.badge-success</span>
+        <span class="badge badge-danger mr-1">.badge-danger</span>
+        <span class="badge badge-warning mr-1">.badge-warning</span>
+        <span class="badge badge-info mr-1">.badge-info</span>
+        <span class="badge badge-light mr-1">.badge-light</span>
+        <span class="badge badge-dark mr-1">.badge-dark</span>
+      </div>
+
+      <!-- Pill badges -->
+      <div class="mb-3">
+        <span class="badge badge-pill badge-primary mr-1">.badge-pill</span>
+        <span class="badge badge-pill badge-success mr-1">99+</span>
+        <span class="badge badge-pill badge-danger mr-1">NEW</span>
+      </div>
+
+      <!-- Badge in heading -->
+      <h5 class="text-light">ข้อความแจ้งเตือน <span class="badge badge-info">4</span></h5>
+
+      <!-- Badge in button -->
+      <button class="btn btn-primary">
+        Inbox <span class="badge badge-light">12</span>
+        <span class="sr-only">unread messages</span>
+      </button>
+    </div>
+
+    <!-- CARDS -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Cards</h4>
+      <span class="code-label">.card</span>
+      <span class="code-label">.card-body</span>
+      <span class="code-label">.card-title</span>
+      <span class="code-label">.card-text</span>
+      <span class="code-label">.card-header</span>
+      <span class="code-label">.card-footer</span>
+      <span class="code-label">.card-img-top</span>
+      <span class="code-label">.card-deck</span>
+      <span class="code-label">.card-columns</span>
+
+      <div class="row mt-3">
+        <!-- Card 1 -->
+        <div class="col-12 col-md-6 col-lg-4 mb-3">
+          <div class="card shadow h-100">
+            <img src="https://picsum.photos/seed/card1/400/200" class="card-img-top" alt="card1">
+            <div class="card-body">
+              <h5 class="card-title text-white">Card Title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">.card-subtitle</h6>
+              <p class="card-text">เนื้อหา card พร้อม .card-text ใช้แสดงข้อมูลต่างๆ</p>
+              <a href="#" class="card-link text-info">Card Link</a>
+              <a href="#" class="card-link text-warning">Link 2</a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">.card-footer</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 - with list group -->
+        <div class="col-12 col-md-6 col-lg-4 mb-3">
+          <div class="card shadow h-100">
+            <div class="card-header">
+              <h5 class="mb-0 text-white">.card-header</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Card ที่มี List Group</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">.list-group-flush Item 1</li>
+              <li class="list-group-item">.list-group-flush Item 2</li>
+              <li class="list-group-item">.list-group-flush Item 3</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="btn btn-primary btn-sm btn-block">Action</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 - text on image -->
+        <div class="col-12 col-md-6 col-lg-4 mb-3">
+          <div class="card shadow h-100" style="overflow: hidden;">
+            <img src="https://picsum.photos/seed/overlay/400/300" class="card-img" alt="overlay">
+            <div class="card-img-overlay d-flex flex-column justify-content-end">
+              <h5 class="card-title text-white">.card-img-overlay</h5>
+              <p class="card-text text-white-50">ข้อความวางทับรูป</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BREADCRUMB -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Breadcrumb</h4>
+      <span class="code-label">.breadcrumb</span>
+      <span class="code-label">.breadcrumb-item</span>
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb rounded">
+          <li class="breadcrumb-item"><a href="#">หน้าหลัก</a></li>
+          <li class="breadcrumb-item"><a href="#">หมวดหมู่</a></li>
+          <li class="breadcrumb-item active" aria-current="page">หน้าปัจจุบัน</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Pagination</h4>
+      <span class="code-label">.pagination</span>
+      <span class="code-label">.page-item</span>
+      <span class="code-label">.page-link</span>
+      <span class="code-label">.pagination-lg</span>
+      <span class="code-label">.pagination-sm</span>
+
+      <!-- Normal -->
+      <nav aria-label="Pagination">
+        <ul class="pagination">
+          <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">&laquo;</a></li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">4</a></li>
+          <li class="page-item"><a class="page-link" href="#">5</a></li>
+          <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+        </ul>
+      </nav>
+
+      <!-- Small -->
+      <nav>
+        <ul class="pagination pagination-sm">
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+        </ul>
+      </nav>
+      <span class="code-label">.pagination-sm</span>
+    </div>
+
+    <!-- JUMBOTRON -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Jumbotron</h4>
+      <span class="code-label">.jumbotron</span>
+      <span class="code-label">.jumbotron-fluid</span>
+
+      <div class="jumbotron rounded">
+        <h1 class="display-4 text-white">.jumbotron</h1>
+        <p class="lead text-white-50">ส่วนแสดงผลขนาดใหญ่สำหรับข้อมูลสำคัญ</p>
+        <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+        <p class="text-light">ใช้สำหรับ hero section หรือข้อความโปรโมท</p>
+        <a class="btn btn-primary btn-lg rounded-pill" href="#">เรียนรู้เพิ่มเติม</a>
+      </div>
+    </div>
+
+    <!-- PROGRESS BARS -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Progress Bars</h4>
+      <span class="code-label">.progress</span>
+      <span class="code-label">.progress-bar</span>
+      <span class="code-label">.progress-bar-striped</span>
+      <span class="code-label">.progress-bar-animated</span>
+
+      <div class="progress mb-3" style="height: 25px;">
+        <div class="progress-bar bg-primary" role="progressbar" style="width: 25%">25%</div>
+      </div>
+      <div class="progress mb-3" style="height: 25px;">
+        <div class="progress-bar bg-success progress-bar-striped" role="progressbar" style="width: 50%">50% .progress-bar-striped</div>
+      </div>
+      <div class="progress mb-3" style="height: 25px;">
+        <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%">75% .progress-bar-animated</div>
+      </div>
+      <!-- Stacked -->
+      <div class="progress" style="height: 25px;">
+        <div class="progress-bar bg-primary" role="progressbar" style="width: 20%">20%</div>
+        <div class="progress-bar bg-success" role="progressbar" style="width: 30%">30%</div>
+        <div class="progress-bar bg-warning" role="progressbar" style="width: 25%">25%</div>
+      </div>
+      <small class="text-muted">Stacked progress bar</small>
+    </div>
+
+    <!-- LIST GROUP -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">List Group</h4>
+      <span class="code-label">.list-group</span>
+      <span class="code-label">.list-group-item</span>
+      <span class="code-label">.list-group-item-action</span>
+      <span class="code-label">.list-group-horizontal</span>
+
+      <div class="row mt-3">
+        <div class="col-md-6 mb-3">
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active">.active item</a>
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+              Item with badge
+              <span class="badge badge-primary badge-pill">14</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">Item 3</a>
+            <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1">.disabled</a>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <!-- Horizontal list group -->
+          <div class="list-group list-group-horizontal-sm mb-3">
+            <a href="#" class="list-group-item list-group-item-action">A</a>
+            <a href="#" class="list-group-item list-group-item-action active">B</a>
+            <a href="#" class="list-group-item list-group-item-action">C</a>
+          </div>
+          <span class="code-label">.list-group-horizontal</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVS (Tabs & Pills) -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Navs - Tabs & Pills</h4>
+      <span class="code-label">.nav</span>
+      <span class="code-label">.nav-tabs</span>
+      <span class="code-label">.nav-pills</span>
+      <span class="code-label">.nav-fill</span>
+      <span class="code-label">.nav-justified</span>
+      <span class="code-label">.tab-content</span>
+      <span class="code-label">.tab-pane</span>
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" id="disabled-tab" href="#" tabindex="-1">.disabled</a>
+        </li>
+      </ul>
+      <div class="tab-content p-3 rounded" style="background: rgba(255,255,255,0.03);" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel">.tab-pane #home — เนื้อหาแท็บ Home</div>
+        <div class="tab-pane fade" id="profile" role="tabpanel">.tab-pane #profile — เนื้อหาแท็บ Profile</div>
+        <div class="tab-pane fade" id="contact" role="tabpanel">.tab-pane #contact — เนื้อหาแท็บ Contact</div>
+      </div>
+
+      <!-- Pills -->
+      <h5 class="text-info mt-4 mb-3">Nav Pills (.nav-pills)</h5>
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1">Disabled</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- SPINNERS -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Spinners</h4>
+      <span class="code-label">.spinner-border</span>
+      <span class="code-label">.spinner-grow</span>
+      <span class="code-label">.spinner-border-sm</span>
+
+      <div class="d-flex align-items-center flex-wrap">
+        <div class="spinner-border mr-3" role="status"><span class="sr-only">Loading...</span></div>
+        <div class="spinner-border spinner-border-sm mr-3" role="status"><span class="sr-only">Loading...</span></div>
+        <div class="spinner-grow mr-3" role="status"><span class="sr-only">Loading...</span></div>
+        <div class="spinner-grow spinner-grow-sm mr-3" role="status"><span class="sr-only">Loading...</span></div>
+        <button class="btn btn-primary mr-3" disabled>
+          <span class="spinner-border spinner-border-sm mr-1" role="status"></span>Loading...
+        </button>
+        <button class="btn btn-success" disabled>
+          <span class="spinner-grow spinner-grow-sm mr-1" role="status"></span>Loading...
+        </button>
+      </div>
+    </div>
+
+    <!-- ACCORDION / COLLAPSE -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Accordion / Collapse</h4>
+      <span class="code-label">.collapse</span>
+      <span class="code-label">.accordion</span>
+      <span class="code-label">data-toggle="collapse"</span>
+
+      <div class="accordion" id="demoAccordion">
+        <div class="card">
+          <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true">
+            <h5 class="mb-0 text-white">Accordion #1 — .collapse .show</h5>
+          </div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#demoAccordion">
+            <div class="card-body text-light">เนื้อหาที่แสดงเมื่อพับออก (เริ่มต้นเปิด .show)</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false">
+            <h5 class="mb-0 text-white">Accordion #2</h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#demoAccordion">
+            <div class="card-body text-light">เนื้อหา Accordion ที่ 2</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false">
+            <h5 class="mb-0 text-white">Accordion #3</h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#demoAccordion">
+            <div class="card-body text-light">เนื้อหา Accordion ที่ 3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAROUSEL -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Carousel</h4>
+      <span class="code-label">.carousel</span>
+      <span class="code-label">.carousel-inner</span>
+      <span class="code-label">.carousel-item</span>
+      <span class="code-label">.carousel-control-prev</span>
+      <span class="code-label">.carousel-indicators</span>
+      <span class="code-label">.carousel-caption</span>
+
+      <div id="demoCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#demoCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#demoCarousel" data-slide-to="1"></li>
+          <li data-target="#demoCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner rounded">
+          <div class="carousel-item active">
+            <img src="https://picsum.photos/seed/slide1/1200/400" class="d-block w-100" alt="slide1">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Slide 1</h5>
+              <p>.carousel-caption .d-none .d-md-block</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/seed/slide2/1200/400" class="d-block w-100" alt="slide2">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Slide 2</h5>
+              <p>เนื้อหาสไลด์ที่ 2</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://picsum.photos/seed/slide3/1200/400" class="d-block w-100" alt="slide3">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Slide 3</h5>
+              <p>เนื้อหาสไลด์ที่ 3</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#demoCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#demoCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- TOOLTIPS & POPOVERS -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Tooltips & Popovers</h4>
+      <span class="code-label">data-toggle="tooltip"</span>
+      <span class="code-label">data-toggle="popover"</span>
+
+      <button class="btn btn-primary mr-2 mb-2" data-toggle="tooltip" data-placement="top" title="Tooltip บน!">Tooltip Top</button>
+      <button class="btn btn-success mr-2 mb-2" data-toggle="tooltip" data-placement="right" title="Tooltip ขวา!">Tooltip Right</button>
+      <button class="btn btn-info mr-2 mb-2" data-toggle="tooltip" data-placement="bottom" title="Tooltip ล่าง!">Tooltip Bottom</button>
+      <button class="btn btn-warning mr-2 mb-2" data-toggle="tooltip" data-placement="left" title="Tooltip ซ้าย!">Tooltip Left</button>
+
+      <hr class="border-secondary">
+
+      <button class="btn btn-danger mr-2 mb-2" data-toggle="popover" data-placement="top"
+              title="Popover Title" data-content="เนื้อหา Popover แสดงเมื่อคลิก">
+        Popover (Click)
+      </button>
+      <button class="btn btn-info mr-2 mb-2" data-toggle="popover" data-trigger="hover"
+              title="Hover Popover" data-content="แสดงเมื่อ hover">
+        Popover (Hover)
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗ -->
+  <!-- ║  5. FORMS                                                  ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════════╝ -->
+  <section id="forms" class="container my-5">
+    <h2 class="section-title">📋 Forms</h2>
+
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Form Controls</h4>
+      <span class="code-label">.form-group</span>
+      <span class="code-label">.form-control</span>
+      <span class="code-label">.form-control-lg</span>
+      <span class="code-label">.form-control-sm</span>
+      <span class="code-label">.form-text</span>
+      <span class="code-label">.form-check</span>
+      <span class="code-label">.form-inline</span>
+      <span class="code-label">.custom-control</span>
+      <span class="code-label">.input-group</span>
+      <span class="code-label">.was-validated</span>
+
+      <form class="mt-3">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputName" class="text-light">ชื่อ (.form-group .col-md-6)</label>
+            <input type="text" class="form-control" id="inputName" placeholder="กรอกชื่อของคุณ">
+            <small class="form-text text-muted">.form-text .text-muted</small>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail" class="text-light">อีเมล</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com">
+          </div>
+        </div>
+
+        <!-- Input sizes -->
+        <div class="form-group">
+          <label class="text-light">Input Sizes</label>
+          <input class="form-control form-control-lg mb-2" type="text" placeholder=".form-control-lg">
+          <input class="form-control mb-2" type="text" placeholder="ปกติ (.form-control)">
+          <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
+        </div>
+
+        <!-- Readonly / Plaintext -->
+        <div class="form-group">
+          <label class="text-light">Readonly / Plaintext</label>
+          <input class="form-control mb-2" type="text" value=".form-control [readonly]" readonly>
+          <input class="form-control-plaintext text-light" type="text" value=".form-control-plaintext" readonly>
+        </div>
+
+        <!-- Select -->
+        <div class="form-group">
+          <label for="selectDemo" class="text-light">Select (.custom-select)</label>
+          <select class="custom-select" id="selectDemo">
+            <option selected>เลือกตัวเลือก...</option>
+            <option value="1">ตัวเลือก 1</option>
+            <option value="2">ตัวเลือก 2</option>
+            <option value="3">ตัวเลือก 3</option>
+          </select>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+          <label for="textareaDemo" class="text-light">Textarea</label>
+          <textarea class="form-control" id="textareaDemo" rows="3" placeholder="พิมพ์ข้อความ..."></textarea>
+        </div>
+
+        <!-- Input Group -->
+        <div class="form-group">
+          <label class="text-light">Input Group (.input-group)</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="background: rgba(99,102,241,0.3); border-color: rgba(255,255,255,0.15); color: #e0e0e0;">@</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Username">
+          </div>
+          <div class="input-group mb-2">
+            <input type="text" class="form-control" placeholder="Search...">
+            <div class="input-group-append">
+              <button class="btn btn-primary" type="button">ค้นหา</button>
+            </div>
+          </div>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <span class="input-group-text" style="background: rgba(99,102,241,0.3); border-color: rgba(255,255,255,0.15); color: #e0e0e0;">฿</span>
+            </div>
+            <input type="text" class="form-control" placeholder="จำนวนเงิน">
+            <div class="input-group-append">
+              <span class="input-group-text" style="background: rgba(99,102,241,0.3); border-color: rgba(255,255,255,0.15); color: #e0e0e0;">.00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Checkboxes & Radios -->
+        <div class="form-group">
+          <label class="text-light d-block">Default Checkboxes & Radios</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="check1" checked>
+            <label class="form-check-label text-light" for="check1">.form-check-inline 1</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="check2">
+            <label class="form-check-label text-light" for="check2">.form-check-inline 2</label>
+          </div>
+        </div>
+
+        <!-- Custom Checkboxes & Radios -->
+        <div class="form-group">
+          <label class="text-light d-block">Custom Controls (.custom-control)</label>
+          <div class="custom-control custom-checkbox mb-2">
+            <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+            <label class="custom-control-label text-light" for="customCheck1">.custom-checkbox ที่ 1</label>
+          </div>
+          <div class="custom-control custom-checkbox mb-2">
+            <input type="checkbox" class="custom-control-input" id="customCheck2">
+            <label class="custom-control-label text-light" for="customCheck2">.custom-checkbox ที่ 2</label>
+          </div>
+          <div class="custom-control custom-radio mb-2">
+            <input type="radio" class="custom-control-input" id="customRadio1" name="customRadio" checked>
+            <label class="custom-control-label text-light" for="customRadio1">.custom-radio ที่ 1</label>
+          </div>
+          <div class="custom-control custom-radio mb-2">
+            <input type="radio" class="custom-control-input" id="customRadio2" name="customRadio">
+            <label class="custom-control-label text-light" for="customRadio2">.custom-radio ที่ 2</label>
+          </div>
+          <div class="custom-control custom-switch mb-2">
+            <input type="checkbox" class="custom-control-input" id="customSwitch1" checked>
+            <label class="custom-control-label text-light" for="customSwitch1">.custom-switch</label>
+          </div>
+        </div>
+
+        <!-- Range -->
+        <div class="form-group">
+          <label for="customRange" class="text-light">Custom Range (.custom-range)</label>
+          <input type="range" class="custom-range" id="customRange">
+        </div>
+
+        <!-- File Input -->
+        <div class="form-group">
+          <label class="text-light">File Input (.custom-file)</label>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">เลือกไฟล์...</label>
+          </div>
+        </div>
+
+        <!-- Validation -->
+        <div class="form-group">
+          <label class="text-light">Validation States</label>
+          <input type="text" class="form-control is-valid mb-2" value="ถูกต้อง (.is-valid)">
+          <div class="valid-feedback d-block mb-2">ข้อมูลถูกต้อง!</div>
+          <input type="text" class="form-control is-invalid" value="ไม่ถูกต้อง (.is-invalid)">
+          <div class="invalid-feedback d-block">กรุณากรอกข้อมูลให้ถูกต้อง</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5">ส่งข้อมูล</button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗ -->
+  <!-- ║  6. MODALS                                                 ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════════╝ -->
+  <section id="modals" class="container my-5">
+    <h2 class="section-title">🪟 Modals</h2>
+
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Modal Dialog</h4>
+      <span class="code-label">.modal</span>
+      <span class="code-label">.modal-dialog</span>
+      <span class="code-label">.modal-content</span>
+      <span class="code-label">.modal-header</span>
+      <span class="code-label">.modal-body</span>
+      <span class="code-label">.modal-footer</span>
+      <span class="code-label">.modal-lg</span>
+      <span class="code-label">.modal-sm</span>
+      <span class="code-label">.modal-dialog-centered</span>
+      <span class="code-label">.modal-dialog-scrollable</span>
+
+      <button class="btn btn-primary mr-2 mb-2" data-toggle="modal" data-target="#defaultModal">Modal ปกติ</button>
+      <button class="btn btn-success mr-2 mb-2" data-toggle="modal" data-target="#largeModal">Modal Large (.modal-lg)</button>
+      <button class="btn btn-info mr-2 mb-2" data-toggle="modal" data-target="#centeredModal">Modal Centered</button>
+
+      <!-- Default Modal -->
+      <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog" aria-labelledby="defaultModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <h5 class="modal-title text-white" id="defaultModalLabel">.modal-dialog (Default)</h5>
+              <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body text-light">
+              <p>เนื้อหาภายใน .modal-body</p>
+              <p>Modal นี้ใช้ขนาดปกติ</p>
+            </div>
+            <div class="modal-footer" style="border-top: 1px solid rgba(255,255,255,0.1);">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+              <button type="button" class="btn btn-primary">บันทึก</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Large Modal -->
+      <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <h5 class="modal-title text-white">.modal-dialog .modal-lg</h5>
+              <button type="button" class="close text-white" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body text-light">
+              Modal ขนาดใหญ่ (.modal-lg) สำหรับเนื้อหาจำนวนมาก
+            </div>
+            <div class="modal-footer" style="border-top: 1px solid rgba(255,255,255,0.1);">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Centered Modal -->
+      <div class="modal fade" id="centeredModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+              <h5 class="modal-title text-white">.modal-dialog-centered</h5>
+              <button type="button" class="close text-white" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body text-light">
+              Modal ที่อยู่กึ่งกลางหน้าจอ!
+            </div>
+            <div class="modal-footer" style="border-top: 1px solid rgba(255,255,255,0.1);">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">เข้าใจแล้ว!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗ -->
+  <!-- ║  7. UTILITIES                                              ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════════╝ -->
+  <section id="utilities" class="container my-5">
+    <h2 class="section-title">🛠️ Utility Classes</h2>
+
+    <!-- SPACING -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Spacing (.m-* .p-*)</h4>
+      <span class="code-label">.m-0 ~ .m-5</span>
+      <span class="code-label">.mt-* .mb-* .ml-* .mr-*</span>
+      <span class="code-label">.mx-* .my-*</span>
+      <span class="code-label">.p-0 ~ .p-5</span>
+      <span class="code-label">.pt-* .pb-* .pl-* .pr-*</span>
+      <span class="code-label">.px-* .py-*</span>
+      <span class="code-label">.mx-auto</span>
+
+      <div class="row text-center mt-3">
+        <div class="col-4 col-md-2 mb-2"><div class="p-1 bg-primary text-white rounded">.p-1</div></div>
+        <div class="col-4 col-md-2 mb-2"><div class="p-2 bg-primary text-white rounded">.p-2</div></div>
+        <div class="col-4 col-md-2 mb-2"><div class="p-3 bg-primary text-white rounded">.p-3</div></div>
+        <div class="col-6 col-md-2 mb-2"><div class="p-4 bg-primary text-white rounded">.p-4</div></div>
+        <div class="col-6 col-md-2 mb-2"><div class="p-5 bg-primary text-white rounded">.p-5</div></div>
+      </div>
+
+      <div class="mt-3 mx-auto p-3 rounded text-center text-white" style="max-width: 300px; width: 100%; background: rgba(99,102,241,0.2);">
+        .mx-auto (จัดกลาง)
+      </div>
+    </div>
+
+    <!-- COLORS -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Colors (.text-* .bg-*)</h4>
+      <span class="code-label">.text-primary</span>
+      <span class="code-label">.text-secondary</span>
+      <span class="code-label">.text-success</span>
+      <span class="code-label">.text-danger</span>
+      <span class="code-label">.text-warning</span>
+      <span class="code-label">.text-info</span>
+      <span class="code-label">.text-light</span>
+      <span class="code-label">.text-dark</span>
+      <span class="code-label">.text-muted</span>
+      <span class="code-label">.text-white</span>
+      <span class="code-label">.text-white-50</span>
+
+      <div class="mb-3 mt-3">
+        <p class="text-primary mb-1">.text-primary</p>
+        <p class="text-secondary mb-1">.text-secondary</p>
+        <p class="text-success mb-1">.text-success</p>
+        <p class="text-danger mb-1">.text-danger</p>
+        <p class="text-warning mb-1">.text-warning</p>
+        <p class="text-info mb-1">.text-info</p>
+        <p class="text-muted mb-1">.text-muted</p>
+        <p class="text-white mb-1">.text-white</p>
+        <p class="text-white-50 mb-1">.text-white-50</p>
+      </div>
+
+      <h5 class="text-info mt-4 mb-3">Background Colors (.bg-*)</h5>
+      <div class="row text-center">
+        <div class="col-6 col-md-3 mb-2"><div class="bg-primary text-white p-2 p-md-3 rounded">.bg-primary</div></div>
+        <div class="col-6 col-md-3 mb-2"><div class="bg-secondary text-white p-2 p-md-3 rounded">.bg-secondary</div></div>
+        <div class="col-6 col-md-3 mb-2"><div class="bg-success text-white p-2 p-md-3 rounded">.bg-success</div></div>
+        <div class="col-6 col-md-3 mb-2"><div class="bg-danger text-white p-2 p-md-3 rounded">.bg-danger</div></div>
+        <div class="col-6 col-md-3 mb-2"><div class="bg-warning text-dark p-2 p-md-3 rounded">.bg-warning</div></div>
+        <div class="col-6 col-md-3 mb-2"><div class="bg-info text-white p-2 p-md-3 rounded">.bg-info</div></div>
+        <div class="col-6 col-md-3 mb-2"><div class="bg-light text-dark p-2 p-md-3 rounded">.bg-light</div></div>
+        <div class="col-6 col-md-3 mb-2"><div class="bg-dark text-white p-2 p-md-3 rounded">.bg-dark</div></div>
+      </div>
+
+      <!-- Gradient -->
+      <h5 class="text-info mt-4 mb-3">Gradient (.bg-gradient-*)</h5>
+      <div class="row text-center">
+        <div class="col-12 col-md-4 mb-2"><div class="bg-gradient-primary text-white p-2 p-md-3 rounded">.bg-gradient-primary</div></div>
+        <div class="col-12 col-md-4 mb-2"><div class="bg-gradient-success text-white p-2 p-md-3 rounded">.bg-gradient-success</div></div>
+        <div class="col-12 col-md-4 mb-2"><div class="bg-gradient-danger text-white p-2 p-md-3 rounded">.bg-gradient-danger</div></div>
+      </div>
+    </div>
+
+    <!-- BORDERS -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Borders & Rounded</h4>
+      <span class="code-label">.border</span>
+      <span class="code-label">.border-top</span>
+      <span class="code-label">.border-0</span>
+      <span class="code-label">.border-primary</span>
+      <span class="code-label">.rounded</span>
+      <span class="code-label">.rounded-circle</span>
+      <span class="code-label">.rounded-pill</span>
+      <span class="code-label">.rounded-0</span>
+      <span class="code-label">.rounded-top</span>
+      <span class="code-label">.rounded-lg</span>
+      <span class="code-label">.rounded-sm</span>
+
+      <div class="d-flex flex-wrap mt-3">
+        <div class="border border-primary p-3 m-2 text-light">.border .border-primary</div>
+        <div class="border-top border-success p-3 m-2 text-light">.border-top .border-success</div>
+        <div class="border border-danger rounded p-3 m-2 text-light">.rounded</div>
+        <div class="border border-info rounded-pill p-3 m-2 text-light">.rounded-pill</div>
+        <div class="border border-warning rounded-lg p-3 m-2 text-light">.rounded-lg</div>
+        <div class="border border-light rounded-0 p-3 m-2 text-light">.rounded-0</div>
+      </div>
+    </div>
+
+    <!-- SHADOWS -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Shadows</h4>
+      <span class="code-label">.shadow-none</span>
+      <span class="code-label">.shadow-sm</span>
+      <span class="code-label">.shadow</span>
+      <span class="code-label">.shadow-lg</span>
+
+      <div class="row text-center mt-3">
+        <div class="col-6 col-md-3 mb-3"><div class="shadow-none p-2 p-md-3 rounded text-light" style="background: rgba(255,255,255,0.08);">.shadow-none</div></div>
+        <div class="col-6 col-md-3 mb-3"><div class="shadow-sm p-2 p-md-3 rounded text-light" style="background: rgba(255,255,255,0.08);">.shadow-sm</div></div>
+        <div class="col-6 col-md-3 mb-3"><div class="shadow p-2 p-md-3 rounded text-light" style="background: rgba(255,255,255,0.08);">.shadow</div></div>
+        <div class="col-6 col-md-3 mb-3"><div class="shadow-lg p-2 p-md-3 rounded text-light" style="background: rgba(255,255,255,0.08);">.shadow-lg</div></div>
+      </div>
+    </div>
+
+    <!-- SIZING -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Sizing (.w-* .h-* .mw-* .mh-*)</h4>
+      <span class="code-label">.w-25</span>
+      <span class="code-label">.w-50</span>
+      <span class="code-label">.w-75</span>
+      <span class="code-label">.w-100</span>
+      <span class="code-label">.w-auto</span>
+      <span class="code-label">.h-25 ~ .h-100</span>
+      <span class="code-label">.mw-100</span>
+      <span class="code-label">.mh-100</span>
+      <span class="code-label">.vw-100</span>
+      <span class="code-label">.vh-100</span>
+
+      <div class="w-25 bg-info text-white p-2 rounded mb-2">.w-25</div>
+      <div class="w-50 bg-info text-white p-2 rounded mb-2">.w-50</div>
+      <div class="w-75 bg-info text-white p-2 rounded mb-2">.w-75</div>
+      <div class="w-100 bg-info text-white p-2 rounded">.w-100</div>
+    </div>
+
+    <!-- POSITION -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Position & Overflow</h4>
+      <span class="code-label">.position-static</span>
+      <span class="code-label">.position-relative</span>
+      <span class="code-label">.position-absolute</span>
+      <span class="code-label">.position-fixed</span>
+      <span class="code-label">.position-sticky</span>
+      <span class="code-label">.fixed-top</span>
+      <span class="code-label">.fixed-bottom</span>
+      <span class="code-label">.sticky-top</span>
+      <span class="code-label">.overflow-auto</span>
+      <span class="code-label">.overflow-hidden</span>
+
+      <div class="position-relative rounded p-3 p-md-5 mt-3" style="background: rgba(99,102,241,0.1); min-height: 100px;">
+        <div class="position-absolute bg-primary text-white p-2 rounded" style="top:10px; right:10px; font-size: 0.8rem;">
+          .position-absolute (top-right)
+        </div>
+        <span class="text-muted">.position-relative container</span>
+      </div>
+    </div>
+
+    <!-- VISIBILITY & FLOAT -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Float, Visibility & Embed</h4>
+      <span class="code-label">.float-left</span>
+      <span class="code-label">.float-right</span>
+      <span class="code-label">.float-none</span>
+      <span class="code-label">.clearfix</span>
+      <span class="code-label">.visible</span>
+      <span class="code-label">.invisible</span>
+      <span class="code-label">.embed-responsive</span>
+      <span class="code-label">.embed-responsive-16by9</span>
+      <span class="code-label">.sr-only</span>
+      <span class="code-label">.text-hide</span>
+
+      <div class="clearfix p-3 rounded mt-3" style="background: rgba(99,102,241,0.1);">
+        <div class="float-left bg-primary text-white p-2 rounded mr-2">.float-left</div>
+        <div class="float-right bg-success text-white p-2 rounded">.float-right</div>
+        <p class="text-light mb-0 pt-5">.clearfix container — ใช้ล้าง float</p>
+      </div>
+
+      <div class="mt-3">
+        <span class="visible text-success mr-3">.visible (มองเห็น)</span>
+        <span class="invisible text-danger">.invisible (มองไม่เห็นแต่ยังกินพื้นที่)</span>
+      </div>
+    </div>
+
+    <!-- MEDIA OBJECT -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Media Object</h4>
+      <span class="code-label">.media</span>
+      <span class="code-label">.media-body</span>
+
+      <div class="media flex-column flex-sm-row p-3 rounded text-center text-sm-left" style="background: rgba(99,102,241,0.1);">
+        <img src="https://picsum.photos/seed/avatarA/64/64" class="mr-sm-3 mb-2 mb-sm-0 rounded-circle align-self-center" alt="avatar">
+        <div class="media-body">
+          <h5 class="mt-0 text-white">.media — ชื่อผู้ใช้</h5>
+          <p class="text-light mb-0">.media-body — เนื้อหา media object สำหรับแสดงข้อมูลแบบมีรูปภาพข้างๆ</p>
+
+          <!-- Nested media -->
+          <div class="media flex-column flex-sm-row mt-3 text-center text-sm-left">
+            <img src="https://picsum.photos/seed/avatarB/48/48" class="mr-sm-3 mb-2 mb-sm-0 rounded-circle align-self-center" alt="avatar2">
+            <div class="media-body">
+              <h6 class="mt-0 text-white">Nested Media</h6>
+              <p class="text-muted mb-0">Media ซ้อนใน media (Nested)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗ -->
+  <!-- ║  8. EXTRAS                                                 ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════════╝ -->
+  <section id="extras" class="container my-5">
+    <h2 class="section-title">🎁 Extras</h2>
+
+    <!-- TOAST -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Toast</h4>
+      <span class="code-label">.toast</span>
+      <span class="code-label">.toast-header</span>
+      <span class="code-label">.toast-body</span>
+
+      <button class="btn btn-primary mb-3" id="showToast">แสดง Toast</button>
+
+      <div class="toast shadow-lg" id="demoToast" role="alert" data-delay="5000" style="min-width: 300px;">
+        <div class="toast-header">
+          <strong class="mr-auto">🔔 แจ้งเตือน</strong>
+          <small class="text-muted">เมื่อกี้</small>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body">
+          นี่คือ .toast-body — ข้อความแจ้งเตือนแบบ Toast!
+        </div>
+      </div>
+    </div>
+
+    <!-- SCROLLSPY -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Embed Responsive</h4>
+      <span class="code-label">.embed-responsive</span>
+      <span class="code-label">.embed-responsive-16by9</span>
+      <span class="code-label">.embed-responsive-4by3</span>
+      <span class="code-label">.embed-responsive-1by1</span>
+
+      <div class="embed-responsive embed-responsive-16by9 rounded" style="max-width: 100%;">
+        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen title="Embed demo"></iframe>
+      </div>
+    </div>
+
+    <!-- STRETCHED LINK -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">Stretched Link & Close</h4>
+      <span class="code-label">.stretched-link</span>
+      <span class="code-label">.close</span>
+      <span class="code-label">.text-decoration-none</span>
+
+      <div class="card shadow" style="max-width: 100%;">
+        <div class="card-body">
+          <h5 class="card-title text-white">.stretched-link</h5>
+          <p class="card-text">Card ทั้งใบคลิกได้ เมื่อใช้ .stretched-link</p>
+          <a href="#" class="stretched-link text-info text-decoration-none">คลิกที่นี่</a>
+        </div>
+      </div>
+
+      <div class="mt-3">
+        <button type="button" class="close text-white" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <span class="text-muted ml-5">.close button</span>
+      </div>
+    </div>
+
+    <!-- ALL CLASS SUMMARY TABLE -->
+    <div class="demo-section">
+      <h4 class="text-light mb-3">📊 สรุปหมวด Class ทั้งหมด</h4>
+
+      <div class="table-responsive">
+        <table class="table table-dark table-bordered table-hover table-sm">
+          <thead>
+            <tr class="text-center">
+              <th>หมวด</th>
+              <th>Class ที่ใช้</th>
+              <th>จำนวน</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-primary">Layout</span></td>
+              <td>.container, .container-fluid, .row, .col-*, .offset-*, .order-*, .no-gutters</td>
+              <td class="text-center">7+</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-success">Flexbox</span></td>
+              <td>.d-flex, .flex-column, .flex-row, .justify-content-*, .align-items-*, .flex-fill, .flex-grow-*, .flex-shrink-*</td>
+              <td class="text-center">8+</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-info">Display</span></td>
+              <td>.d-none, .d-block, .d-inline, .d-flex, .d-sm-*, .d-md-*, .d-lg-*</td>
+              <td class="text-center">7+</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-warning">Typography</span></td>
+              <td>.display-*, .lead, .h1-.h6, .font-weight-*, .font-italic, .text-uppercase, .text-lowercase, .text-capitalize, .text-monospace, .text-truncate, .blockquote</td>
+              <td class="text-center">12+</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-danger">Colors</span></td>
+              <td>.text-primary~dark, .text-muted, .text-white, .text-white-50, .bg-primary~dark, .bg-gradient-*</td>
+              <td class="text-center">20+</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-primary">Spacing</span></td>
+              <td>.m-0~5, .p-0~5, .mt-*, .mb-*, .ml-*, .mr-*, .mx-*, .my-*, .px-*, .py-*, .mx-auto</td>
+              <td class="text-center">20+</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-success">Components</span></td>
+              <td>.btn-*, .alert-*, .badge-*, .card-*, .navbar-*, .nav-*, .list-group-*, .breadcrumb-*, .pagination-*, .jumbotron, .carousel-*, .accordion, .modal-*, .toast-*, .spinner-*, .media-*, .progress-*</td>
+              <td class="text-center">50+</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-info">Forms</span></td>
+              <td>.form-group, .form-control, .form-row, .form-check, .form-inline, .custom-control, .custom-checkbox, .custom-radio, .custom-switch, .custom-select, .custom-range, .custom-file, .input-group-*, .is-valid, .is-invalid</td>
+              <td class="text-center">15+</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-warning">Borders</span></td>
+              <td>.border, .border-*, .rounded, .rounded-circle, .rounded-pill, .rounded-0, .rounded-lg, .rounded-sm, .rounded-top</td>
+              <td class="text-center">9+</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-danger">Utilities</span></td>
+              <td>.shadow-*, .position-*, .overflow-*, .float-*, .clearfix, .visible, .invisible, .sr-only, .stretched-link, .close, .text-decoration-none, .embed-responsive-*, .w-*, .h-*</td>
+              <td class="text-center">15+</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="text-center font-weight-bold">
+              <td colspan="2">รวมทั้งหมด (ประมาณ)</td>
+              <td><span class="badge badge-pill badge-primary p-2">160+ Classes</span></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗ -->
+  <!-- ║  FOOTER                                                    ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════════╝ -->
+  <footer class="py-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h5 class="text-white mb-3">⚡ Bootstrap 4 Reference</h5>
+          <p class="text-white-50 small">รวมตัวอย่างการใช้งาน Class Name ทุกหมวดหมู่ของ Bootstrap 4 พร้อมตัวอย่างจริง</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="text-white mb-3">ลิงก์ด่วน</h5>
+          <ul class="list-unstyled">
+            <li><a href="#layout" class="text-white-50 text-decoration-none">📐 Layout</a></li>
+            <li><a href="#content" class="text-white-50 text-decoration-none">📝 Content</a></li>
+            <li><a href="#components" class="text-white-50 text-decoration-none">🧩 Components</a></li>
+            <li><a href="#forms" class="text-white-50 text-decoration-none">📋 Forms</a></li>
+            <li><a href="#utilities" class="text-white-50 text-decoration-none">🛠️ Utilities</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h5 class="text-white mb-3">ข้อมูลเพิ่มเติม</h5>
+          <p class="text-white-50 small">
+            Bootstrap v4.6.2<br>
+            jQuery v3.5.1<br>
+            Popper.js v1.16.1
+          </p>
+          <a href="https://getbootstrap.com/docs/4.6/" target="_blank" class="btn btn-outline-light btn-sm rounded-pill">
+            📖 Official Docs
+          </a>
+        </div>
+      </div>
+      <hr style="border-color: rgba(255,255,255,0.1);">
+      <div class="text-center">
+        <p class="text-white-50 small mb-0">
+          &copy; 2026 Bootstrap 4 Class Reference — สร้างด้วย ❤️ เพื่อการเรียนรู้
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-primary rounded-circle shadow-lg position-fixed d-none d-sm-flex"
+     style="bottom: 20px; right: 20px; width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; z-index: 1000; font-size: 1.1rem;">
+    ↑
+  </a>
+  <!-- Back to Top (Mobile) -->
+  <a href="#" class="btn btn-primary rounded-circle shadow-lg position-fixed d-flex d-sm-none"
+     style="bottom: 14px; right: 14px; width: 38px; height: 38px; align-items: center; justify-content: center; z-index: 1000; font-size: 0.95rem;">
+    ↑
+  </a>
+
+
+  <!-- ╔══════════════════════════════════════════════════════════════╗ -->
+  <!-- ║  JS DEPENDENCIES (Official CDN)                            ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════════╝ -->
+  <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+          crossorigin="anonymous"></script>
+  <!-- Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+          integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7bd36CouthVs"
+          crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+          integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+          crossorigin="anonymous"></script>
+
+  <script>
+    // Initialize Tooltips
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+
+    // Initialize Popovers
+    $(function () {
+      $('[data-toggle="popover"]').popover();
+    });
+
+    // Toast trigger
+    $('#showToast').on('click', function () {
+      $('#demoToast').toast('show');
+    });
+
+    // Smooth scrolling for anchor links (uses native JS — jQuery Slim has no .animate())
+    $('a[href^="#"]').on('click', function (e) {
+      if ($(this).data('toggle') || $(this).data('slide') || $(this).data('dismiss')) {
+        return;
+      }
+      var href = this.getAttribute('href');
+      if (!href || href === '#') {
+        return;
+      }
+      var target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        var offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+        var navCollapse = $('.navbar-collapse');
+        if (navCollapse.hasClass('show')) {
+          navCollapse.collapse('hide');
+        }
+      }
+    });
+
+    // ============================
+    // SCROLLSPY — Active nav link
+    // ============================
+    (function () {
+      var sections = document.querySelectorAll('section[id]');
+      var navLinks = document.querySelectorAll('.navbar-nav .nav-link[href^="#"], .dropdown-menu .dropdown-item[href^="#"]');
+      var dropdownToggle = document.querySelector('#navDropdown');
+      var dropdownSectionIds = ['utilities', 'modals', 'extras'];
+
+      function setActiveLink() {
+        var scrollPos = window.pageYOffset + 120;
+        var currentId = '';
+
+        sections.forEach(function (section) {
+          if (section.offsetTop <= scrollPos) {
+            currentId = section.getAttribute('id');
+          }
+        });
+
+        // Update nav links
+        navLinks.forEach(function (link) {
+          var href = link.getAttribute('href');
+          if (!href || href === '#') return;
+          var linkId = href.substring(1);
+          link.classList.remove('active');
+          if (link.parentElement) {
+            link.parentElement.classList.remove('active');
+          }
+          if (linkId === currentId) {
+            link.classList.add('active');
+            if (link.parentElement) {
+              link.parentElement.classList.add('active');
+            }
+          }
+        });
+
+        // Highlight "More" dropdown when a sub-section is active
+        if (dropdownToggle) {
+          var parentLi = dropdownToggle.parentElement;
+          if (dropdownSectionIds.indexOf(currentId) !== -1) {
+            parentLi.classList.add('active');
+            dropdownToggle.classList.add('active');
+          } else {
+            parentLi.classList.remove('active');
+            dropdownToggle.classList.remove('active');
+          }
+        }
+      }
+
+      window.addEventListener('scroll', setActiveLink);
+      setActiveLink(); // run on load
+    })();
+
+    // ============================
+    // SEARCH — Filter demo sections
+    // ============================
+    (function () {
+      var searchInput = document.getElementById('searchInput');
+      var searchForm = document.getElementById('searchForm');
+      var allSections = document.querySelectorAll('section[id]');
+      var heroSection = document.querySelector('.hero-section');
+      var noResultDiv = null;
+
+      function createNoResult() {
+        noResultDiv = document.createElement('div');
+        noResultDiv.id = 'noResult';
+        noResultDiv.className = 'container text-center py-5';
+        noResultDiv.innerHTML = '<div class="demo-section"><h4 class="text-warning">🔍 ไม่พบผลลัพธ์</h4><p class="text-muted">ลองค้นหาด้วยคำอื่น เช่น btn, card, flex, modal, grid</p></div>';
+        noResultDiv.style.display = 'none';
+        var firstSection = document.querySelector('section[id]');
+        if (firstSection) {
+          firstSection.parentElement.insertBefore(noResultDiv, firstSection);
+        }
+      }
+      createNoResult();
+
+      function doSearch(query) {
+        query = query.trim().toLowerCase();
+        var matchCount = 0;
+
+        if (!query) {
+          // Show all
+          allSections.forEach(function (sec) { sec.style.display = ''; });
+          if (heroSection) heroSection.style.display = '';
+          if (noResultDiv) noResultDiv.style.display = 'none';
+          // Remove highlights
+          document.querySelectorAll('.search-highlight').forEach(function (el) {
+            el.classList.remove('search-highlight');
+          });
+          return;
+        }
+
+        // Hide hero
+        if (heroSection) heroSection.style.display = 'none';
+
+        allSections.forEach(function (sec) {
+          var demoSections = sec.querySelectorAll('.demo-section');
+          var sectionMatch = false;
+
+          // Check section title
+          var sectionTitle = sec.querySelector('.section-title');
+          if (sectionTitle && sectionTitle.textContent.toLowerCase().indexOf(query) !== -1) {
+            sectionMatch = true;
+          }
+
+          demoSections.forEach(function (demo) {
+            var text = demo.textContent.toLowerCase();
+            if (text.indexOf(query) !== -1) {
+              demo.style.display = '';
+              demo.classList.add('search-highlight');
+              sectionMatch = true;
+            } else {
+              demo.style.display = 'none';
+              demo.classList.remove('search-highlight');
+            }
+          });
+
+          if (sectionMatch) {
+            sec.style.display = '';
+            matchCount++;
+            // If section title matched, show all its demo-sections
+            if (sectionTitle && sectionTitle.textContent.toLowerCase().indexOf(query) !== -1) {
+              demoSections.forEach(function (demo) {
+                demo.style.display = '';
+                demo.classList.add('search-highlight');
+              });
+            }
+          } else {
+            sec.style.display = 'none';
+          }
+        });
+
+        if (noResultDiv) {
+          noResultDiv.style.display = matchCount === 0 ? '' : 'none';
+        }
+      }
+
+      // Search on form submit
+      searchForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        doSearch(searchInput.value);
+      });
+
+      // Live search on typing (with debounce)
+      var searchTimer;
+      searchInput.addEventListener('input', function () {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(function () {
+          doSearch(searchInput.value);
+        }, 300);
+      });
+
+      // Clear search on ESC
+      searchInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          searchInput.value = '';
+          doSearch('');
+          searchInput.blur();
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
